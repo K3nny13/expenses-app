@@ -4,7 +4,9 @@ import './ExpenseForm.css';
 const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
-  const [enteredDate, setEnteredDate] = useState('');
+  const todaysDate = new Date();
+  const dateString = todaysDate.toISOString().slice(0 ,10);
+  const [enteredDate, setEnteredDate] = useState(dateString);
 
   const titleChangeHandler = event => {
     setEnteredTitle(event.target.value);
