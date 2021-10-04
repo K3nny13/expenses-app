@@ -3,6 +3,7 @@ import Card from '../UI/Card';
 import ExpenseItem from "./ExpenseItem";
 import ExpensesFilter from '../ExpensesFilter/ExpensesFilter';
 import { useState } from 'react/cjs/react.development';
+import ExpensesList from './ExpensesList';
 
 function Expenses(props) {
   const [selectedDate, setSelectedDate] = useState(new Date().toLocaleDateString().slice(0,4));
@@ -15,11 +16,12 @@ function Expenses(props) {
     return expense.date.getFullYear().toString() === selectedDate;
   });
 
+
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter selected={selectedDate} onFilterChange={filterChangeHandler} />
-        {filteredExpenses.map(expense => <ExpenseItem key={expense.id} title={expense.title} date={expense.date} amount={expense.amount} />)}
+        <ExpensesList items={filteredExpenses}/>
       </Card>
     </div>
   );
