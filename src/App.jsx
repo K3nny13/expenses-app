@@ -1,8 +1,14 @@
-import NewExpense from './components/NewExpense/NewExpense'
+import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
-import { useState } from 'react/cjs/react.development';
+import { useState } from 'react';
 
 const INIT_EXPENSES = [
+  {
+    id: 'e1',
+    title: 'Toilet Paper',
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
   {
     id: 'e1',
     title: 'Toilet Paper',
